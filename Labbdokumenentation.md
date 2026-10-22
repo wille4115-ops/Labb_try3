@@ -12,6 +12,7 @@ steg för steg hur det utfördes,
 | Wille | Ubuntu 26.01 | 192.168.10.10 | 255.255.255.0 | 192.168.10.1 |
 | wille | windows 11 home | 192.168.10.15 | 255.255.255.0 |192.168.10.1 |
 
+Har lagt in anteckningar samt satt chmod 640 på den filen och tilldelat 750 på mappen, samt har tilldelat mappen och filen till konsultgruppen
 
 # Steg för Steg
 Jag började med att skapa mappen som konsult gruppen som ska användas
@@ -29,6 +30,9 @@ Sen gick jag in och ändrade på nätverks inställningar och stängde av server
 efter det så satt jag ditt konfigurationen, samt kollade att alla har rättigheter som behövs och att den kunde kommunicera med windows 11. (samma sak i wndows 11 dock använde jag format-table identityReference, FilesystemRights, AccessControlType, IsInherited iställer eftersom det motsvarars linux 640 och 750)
 
 # Kommandos som användes för att kunna utföra detta:
+**Notering om sökväggar**
+
+Under det praktiska genomförandet i labbmiljön användes sökvägen `/data/konsultdata` (samt `/data/systementor/konsultdata`) vid körning av kommandona. Detta motsvarar sökvägen `/var/systementor/konsultdata` som anges i uppgiftsinstruktionerna för Del 3.
 
 # sudo groupadd konsulter
 Är kommandot för att lägga till en grupp
@@ -113,7 +117,16 @@ Med detta kommandot so skapades en mapp genom CLI
 
 # (Get-Acl "C: \systementor\"). access | format-table identityReference, FilesystemRights, AccessControlType, IsInherited
 
-Detta kommandot tilldelade rättigheter för mappen Konsultdata 
+Detta kommandot inspekterar och visar existerande behörigheter för mappen 
+
+dentityReference: Vilken grupp eller användare det gäller (t.ex. BUILTIN\Administrators eller gruppen konsulter).
+
+FileSystemRights: Vilka rättigheter de har (t.ex. ReadAndExecute, Modify eller FullControl).
+
+
+accessControlType: Om rättigheten är tillåten (Allow) eller nekad (Deny).
+
+IsInherited: Visa True om rättigheten ärvs ovanifrån (från C:\) eller False om du har satt den direkt på mappen.
 
 
 <img width="1001" height="238" alt="Image" src="https://github.com/user-attachments/assets/040b4a26-8a1e-492c-81d2-b765ec9fe002" />
