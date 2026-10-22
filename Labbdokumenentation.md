@@ -12,7 +12,6 @@ steg för steg hur det utfördes,
 | Wille | Ubuntu 26.01 | 192.168.10.10 | 255.255.255.0 | 192.168.10.1 |
 | wille | windows 11 home | 192.168.10.15 | 255.255.255.0 |192.168.10.1 |
 
-Har lagt in anteckningar samt satt chmod 640 på den filen och tilldelat 750 på mappen, samt har tilldelat mappen och filen till konsultgruppen
 
 # Steg för Steg
 Jag började med att skapa mappen som konsult gruppen som ska användas
