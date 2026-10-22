@@ -8,10 +8,14 @@ Satt upp en statisk ip address som är då 192.168.10.10/24 och default är 192.
 | :--- | :--- | :--- | :--- | :--- |
 | Wille | Ubuntu 26.01 | 192.168.10.10 | 255.255.255.0 | 192.168.10.1 |
 | wille | windows 11 | 192.168.10.15 | 255.255.255.0 |192.168.10.1 |
-| | | |  |  |
-
 
 Har lagt in anteckningar samt satt chmod 640 på den filen och tilldelat 750 på mappen, samt har tilldelat mappen och filen till konsultgruppen
+
+# Steg för Steg
+Jag började med att skapa mappen som konsult gruppen, ska använda och efter jag skapade mappen och gruppen då la jag till anteckningar som då ägaren kan skriva i men inte det överiga inte kan göra utan det kan bara läsa. samt satt 640 på filen då bara ägaren ska kunna redigera och lägga till saker i de här fallet, vanliga användare kan läsa vad som finns i den.
+
+Sen gick jag in och ändrade på nätverks inställningar och stängde av servers dhcp4 för att kunna sätta en statisk ip address så den kan kommunicera bara med windows 11 vm, efter det så satt jag ditt konfigurationen, samt kollade att alla har rättigheter som behövs och att den kunde kommunicera med windows 11.
+
 # Kommandos som användes för att kunna utföra detta:
 
 # sudo groupadd konsulter
@@ -25,14 +29,18 @@ Detta kommandot skapar en mapp
 Med detta kommandot så skapas anteckningar inom mappen konsultdata
 
 # sudo chmod 750 /data/konsultdata
-(Ägaren / User): rwx – Ägaren (root) kan läsa, skriva och gå in i/exekvera i mappen.
+7 (Ägaren / User): rwx – Ägaren (root) kan läsa, skriva och gå in i/exekvera i mappen.
+
 5 (Gruppen / Group): r-x – Medlemmar i mappens grupp kan läsa och gå in i/exekvera i mappen, men inte skapa eller ta bort filer.
+
 0 (Övriga / Others): --- – Alla andra användare på systemet saknar helt tillgång.
 
 # sudo chmod 640 /var/systementor/konsultdata/anteckningar.txt
 
 6 (Ägaren / User): rw- – Ägaren kan läsa och skriva (ändra) i filen.
+
 4 (Gruppen / Group): r-- – Medlemmar i filens grupp kan enbart läsa filen (inte ändra).
+
 0 (Övriga / Others): --- – Alla andra användare har ingen tillgång alls.
 
 # sudo nano /etc/netplan/00-installer.yaml (kan vara annorlunda för andra)
@@ -45,6 +53,7 @@ Då sparas din nätverks config med hjälp av denna kommandot
 
 # ls -ld /var/systementor/konsultdata /var/systementor/konsultdata/anteckningar.txt
 Detta kommandot kan du se vilken som är mappen och vilken som är filen.
+
 
 
 # Windows delen (Gammal)
