@@ -18,7 +18,7 @@ Efter jag skapade mappen och gruppen då la jag till anteckningar, samt rättigh
 
 (chmod 750) Som då root (ägaren) kan skriva i men inte det överiga inte kan göra utan det kan bara läsa. 
 
-Innan jag satt 640 på filen körde jag sudo chgrp konsulter /data/systementor/konsultdata/anteckningar.txt
+Innan jag satt 640 på filen, och 750 på mappen så körde jag sudo chgrp konsulter /data/systementor/konsultdata/anteckningar.txt
 
 samt satt 640 på filen då bara ägaren ska kunna redigera och lägga till saker i de här fallet, vanliga användare kan läsa vad som finns i den.
 
@@ -56,6 +56,8 @@ Med detta kommandot så skapas anteckningar inom mappen konsultdata
 # sudo chgrp konsulter /data/systementor/konsultdata/anteckningar.txt
 
 Med detta kommandot så tilldelar den filen till gruppen som man namnger (konsulter) samt ändrar gruppägarskap till konsulter
+
+<img width="373" height="91" alt="Image" src="https://github.com/user-attachments/assets/651372f6-81f3-4a3d-9388-80dd2deab70e" />
 
 
 # sudo chmod 640 /var/systementor/konsultdata/anteckningar.txt
