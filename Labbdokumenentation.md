@@ -56,9 +56,15 @@ Med detta kommandot så skapas anteckningar inom mappen konsultdata
 
 0 (Övriga / Others): --- – Alla andra användare på systemet saknar helt tillgång.
 
-# sudo chgrp konsulter /data/systementor/konsultdata/anteckningar.txt
+# sudo chgrp konsulter /data/systementor/konsultdata/anteckningar.txt & Is -la
 
-Med detta kommandot så tilldelar den filen till gruppen som man namnger (konsulter) samt ändrar gruppägarskap till konsulter
+Med detta kommandot så tilldelar den filen till gruppen som man namnger (konsulter) samt ändrar gruppägarskap till konsulter och visar vilka behörigheter dem har på filen
+
+<img width="368" height="28" alt="Image" src="https://github.com/user-attachments/assets/c18d022a-2246-40b7-8374-9ee09836b47c" />
+
+
+
+<img width="373" height="91" alt="Image" src="https://github.com/user-attachments/assets/651372f6-81f3-4a3d-9388-80dd2deab70e" />
 
 
 # sudo chmod 640 /var/systementor/konsultdata/anteckningar.txt
