@@ -1,9 +1,12 @@
-William Avramidis 21-11-2026 ICX26.  Sätter upp fil och map till konsultgrupp
+William Avramidis 21-11-2026 ICX26.  
+# Beskrvining
 
-Installerat ubuntu server med inget extra tillägg och svensk tangetbord
+Labbmilijön är ubuntu server och windows 11 vm, 
+Konfigurat statisk ip addresser, 
+fil&mapp behörigheter i windows och linux med least privilege, 
+steg för steg hur det utfördes, 
 
-Satt upp en statisk ip address som är då 192.168.10.10/24 och default är 192.168.10.1 och DNS är 8.8.8.8 (googles) alternativt 1.1.1.1
-
+# Labbmiljö & Nätverk
 | Hostname | Operativesystem | IP address | Subnetmask | Gateway |
 | :--- | :--- | :--- | :--- | :--- |
 | Wille | Ubuntu 26.01 | 192.168.10.10 | 255.255.255.0 | 192.168.10.1 |
@@ -18,7 +21,7 @@ Efter jag skapade mappen och gruppen då la jag till anteckningar, samt rättigh
 
 (chmod 750) Som då root (ägaren) kan skriva i men inte det överiga inte kan göra utan det kan bara läsa. 
 
-Innan jag satt 640 på filen, och 750 på mappen så körde jag sudo chgrp konsulter /data/systementor/konsultdata/anteckningar.txt
+Innan jag satt 640 på filen körde jag sudo chgrp konsulter /data/systementor/konsultdata/anteckningar.txt
 
 samt satt 640 på filen då bara ägaren ska kunna redigera och lägga till saker i de här fallet, vanliga användare kan läsa vad som finns i den.
 
@@ -56,8 +59,6 @@ Med detta kommandot så skapas anteckningar inom mappen konsultdata
 # sudo chgrp konsulter /data/systementor/konsultdata/anteckningar.txt
 
 Med detta kommandot så tilldelar den filen till gruppen som man namnger (konsulter) samt ändrar gruppägarskap till konsulter
-
-<img width="373" height="91" alt="Image" src="https://github.com/user-attachments/assets/651372f6-81f3-4a3d-9388-80dd2deab70e" />
 
 
 # sudo chmod 640 /var/systementor/konsultdata/anteckningar.txt
