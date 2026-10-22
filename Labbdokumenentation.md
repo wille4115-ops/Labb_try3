@@ -27,7 +27,7 @@ samt satt 640 på filen då bara ägaren ska kunna redigera och lägga till sake
 
 Sen gick jag in och ändrade på nätverks inställningar och stängde av servers dhcp4 för att kunna sätta en statisk ip address så den kan kommunicera bara med windows 11 vm
 
-efter det så satt jag ditt konfigurationen, samt kollade att alla har rättigheter som behövs och att den kunde kommunicera med windows 11.
+efter det så satt jag ditt konfigurationen, samt kollade att alla har rättigheter som behövs och att den kunde kommunicera med windows 11. (samma sak i wndows 11 dock använde jag format-table identityReference, FilesystemRights, AccessControlType, IsInherited iställer eftersom det motsvarars linux 640 och 750)
 
 # Kommandos som användes för att kunna utföra detta:
 
