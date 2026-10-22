@@ -100,6 +100,7 @@ Detta kommandot kan du se vilken som är mappen och vilken som är filen.
 
 Visar ip address samt dns 
 
+<img width="585" height="187" alt="Image" src="https://github.com/user-attachments/assets/721a3b53-3aca-40e6-90ff-d401396c1861" />
 
 
 # Windows delen (Gammal)
