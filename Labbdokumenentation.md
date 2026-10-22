@@ -7,14 +7,24 @@ Satt upp en statisk ip address som är då 192.168.10.10/24 och default är 192.
 | Hostname | Operativesystem | IP address | Subnetmask | Gateway |
 | :--- | :--- | :--- | :--- | :--- |
 | Wille | Ubuntu 26.01 | 192.168.10.10 | 255.255.255.0 | 192.168.10.1 |
-| wille | windows 11 | 192.168.10.15 | 255.255.255.0 |192.168.10.1 |
+| wille | windows 11 home | 192.168.10.15 | 255.255.255.0 |192.168.10.1 |
 
 Har lagt in anteckningar samt satt chmod 640 på den filen och tilldelat 750 på mappen, samt har tilldelat mappen och filen till konsultgruppen
 
 # Steg för Steg
-Jag började med att skapa mappen som konsult gruppen, ska använda och efter jag skapade mappen och gruppen då la jag till anteckningar som då ägaren kan skriva i men inte det överiga inte kan göra utan det kan bara läsa. samt satt 640 på filen då bara ägaren ska kunna redigera och lägga till saker i de här fallet, vanliga användare kan läsa vad som finns i den.
+Jag började med att skapa mappen som konsult gruppen som ska användas
 
-Sen gick jag in och ändrade på nätverks inställningar och stängde av servers dhcp4 för att kunna sätta en statisk ip address så den kan kommunicera bara med windows 11 vm, efter det så satt jag ditt konfigurationen, samt kollade att alla har rättigheter som behövs och att den kunde kommunicera med windows 11.
+Efter jag skapade mappen och gruppen då la jag till anteckningar, samt rättigheter
+
+(chmod 750) Som då root (ägaren) kan skriva i men inte det överiga inte kan göra utan det kan bara läsa. 
+
+Innan jag satt 640 på filen körde jag sudo chgrp konsulter /data/systementor/konsultdata/anteckningar.txt
+
+samt satt 640 på filen då bara ägaren ska kunna redigera och lägga till saker i de här fallet, vanliga användare kan läsa vad som finns i den.
+
+Sen gick jag in och ändrade på nätverks inställningar och stängde av servers dhcp4 för att kunna sätta en statisk ip address så den kan kommunicera bara med windows 11 vm
+
+efter det så satt jag ditt konfigurationen, samt kollade att alla har rättigheter som behövs och att den kunde kommunicera med windows 11.
 
 # Kommandos som användes för att kunna utföra detta:
 
@@ -42,6 +52,11 @@ Med detta kommandot så skapas anteckningar inom mappen konsultdata
 5 (Gruppen / Group): r-x – Medlemmar i mappens grupp kan läsa och gå in i/exekvera i mappen, men inte skapa eller ta bort filer.
 
 0 (Övriga / Others): --- – Alla andra användare på systemet saknar helt tillgång.
+
+# sudo chgrp konsulter /data/systementor/konsultdata/anteckningar.txt
+
+Med detta kommandot så tilldelar den filen till gruppen som man namnger (konsulter) samt ändrar gruppägarskap till konsulter
+
 
 # sudo chmod 640 /var/systementor/konsultdata/anteckningar.txt
 
