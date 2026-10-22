@@ -90,6 +90,12 @@ Detta kommandot kan du se vilken som är mappen och vilken som är filen.
 <img width="454" height="68" alt="Image" src="https://github.com/user-attachments/assets/b77bd7b6-1a7e-4cbb-ba9d-473943dd14f0" />
 
 
+# Ip addr show
+
+Visar ip address samt dns 
+
+
+
 # Windows delen (Gammal)
 
 # New-item -itemtype Directory -Path C:\Systementor\Konsultdata
